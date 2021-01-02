@@ -14,3 +14,7 @@ mybatis:
   type-aliases-package: com.suave.cloud.entity
   configuration:
     map-underscore-to-camel-case: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka
