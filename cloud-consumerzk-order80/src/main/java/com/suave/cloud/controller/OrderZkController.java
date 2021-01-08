@@ -1,0 +1,23 @@
+package com.suave.cloud.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+/**
+ * @author Suave
+ * @date 2021/1/8 15:44
+ */
+@RestController
+public class OrderZkController {
+    public static final String INVOKE_URL = "http://cloud-provider-payment";
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @RequestMapping("/consumer/payment/zk")
+    public String paymentInfo() {
+        return restTemplate.getForObject(INVOKE_URL + "/payment/zk", String.class);
+    }
+}
