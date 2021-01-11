@@ -10,3 +10,6 @@ eureka:
 ribbon:
   ReadTimeout: 300000
   ConnectTimeout: 300000
+logging:
+  level:
+    com.suave.cloud.service: debug
