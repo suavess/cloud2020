@@ -1,7 +1,6 @@
 package com.suave.cloud.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.suave.cloud.service.PaymentHystrixService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,18 +29,17 @@ public class OrderHystrixController {
 //            // 当前线程超时时间设置为三秒
 //            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1500")
 //    })
-    @HystrixCommand
+//    @HystrixCommand
     public String paymentInfoTimeout(@PathVariable("id") Integer id) {
-        int a = 10 / 0;
         return paymentHystrixService.paymentInfoTimeout(id);
     }
 
-    public String paymentInfoTimeOutHandler(@PathVariable("id") Integer id) {
-        return "服务消费者80，对方支付系统繁忙，请稍后再试！";
-    }
-
-    public String paymentGlobalFallback() {
-        return "全局Hystrix处理异常信息";
-    }
+//    public String paymentInfoTimeOutHandler(@PathVariable("id") Integer id) {
+//        return "服务消费者80，对方支付系统繁忙，请稍后再试！";
+//    }
+//
+//    public String paymentGlobalFallback() {
+//        return "全局Hystrix处理异常信息";
+//    }
 
 }
