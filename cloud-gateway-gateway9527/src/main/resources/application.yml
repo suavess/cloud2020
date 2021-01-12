@@ -5,15 +5,19 @@ spring:
     name: cloud-gateway
   cloud:
     gateway:
+      # 开启动态路由配置
+      discovery:
+        locator:
+          enabled: true
       routes:
         - id: payment_routh
-          uri: http://localhost:8001
-          #          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址;
+          #          uri: http://localhost:8001
+          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址;
           predicates:
             - Path=/payment/get/**
         - id: payment_routh2
-          uri: http://localhost:8001
-          #          uri: lb://cloud-payment-service
+          #          uri: http://localhost:8001
+          uri: lb://cloud-payment-service
           predicates:
             - Path=/payment/lb/**
 eureka:
