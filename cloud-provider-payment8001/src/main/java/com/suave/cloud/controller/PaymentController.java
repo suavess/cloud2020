@@ -50,6 +50,11 @@ public class PaymentController {
         return new CommonResult<>(500, "查询失败！端口号：" + port, null);
     }
 
+    @GetMapping("/payment/lb/get")
+    public Object getlb() {
+        return discoveryClient.getServices();
+    }
+
     @GetMapping("/payment/discovery")
     public Object discovery() {
         List<String> services = discoveryClient.getServices();
