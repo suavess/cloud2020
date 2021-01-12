@@ -15,6 +15,14 @@ spring:
           uri: lb://cloud-payment-service # 匹配后提供服务的路由地址;
           predicates:
             - Path=/payment/get/**
+        #            - After=2021-01-12T10:59:05.453+08:00[Asia/Shanghai]
+        #            - Before=2021-01-13T10:59:05.453+08:00[Asia/Shanghai]
+        #            - Between=2021-01-13T10:59:05.453+08:00[Asia/Shanghai],2021-01-14T10:59:05.453+08:00[Asia/Shanghai]
+        #            - Cookie=username,suave
+        #            - Header=X-Request-Id,\d+ # 请求头要求有X-Request-Id且值为整数
+        #            - Host=baidu.com
+        #            - Method=GET
+        #            - Query=username,\d+ # 请求参数名username，且要求是整数
         - id: payment_routh2
           #          uri: http://localhost:8001
           uri: lb://cloud-payment-service
