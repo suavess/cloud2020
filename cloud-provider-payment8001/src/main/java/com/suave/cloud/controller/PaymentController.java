@@ -79,5 +79,15 @@ public class PaymentController {
         TimeUnit.SECONDS.sleep(3);
         return port;
     }
+
+    /**
+     * zipkin 链路追踪演示
+     *
+     * @return
+     */
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin() {
+        return "hi this is payment zipkin" + port;
+    }
 }
 
