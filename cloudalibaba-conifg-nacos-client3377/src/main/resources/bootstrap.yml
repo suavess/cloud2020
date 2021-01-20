@@ -12,5 +12,5 @@ spring:
         server-addr: 127.0.0.1:8848
         file-extension: yaml
         group: DEV_GROUP
-
+        namespace: 0923b05a-b5ae-4041-943f-5b035abeab71
 # ${prefix}-${spring.profiles.active}.${file-extension}
